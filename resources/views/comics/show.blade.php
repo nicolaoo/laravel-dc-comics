@@ -12,7 +12,7 @@
 
 <div class="container">
     <div class="grid">
-        <div class="card-comics">
+        <div class="card-comics py-5">
             <div class="row">
                 <a class="col-auto my-4 btn btn-primary" href="{{ route('comics.index') }}">HOME</a>
                 <figure>
