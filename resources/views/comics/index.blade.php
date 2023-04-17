@@ -35,10 +35,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Img</th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Serie</th>
                 <th scope="col">Data</th>
-                <th scope="col">Img</th>
+                <th scope="col">Modifica</th>
 
             </tr>
         </thead>
@@ -47,6 +48,9 @@
             <tr>
                 <td>{{ $comic->id }}</td>
                 <td>
+                    <img src="{{ $comic->thumb}}" alt="" height="80">
+                </td>
+                <td>
                     <a href="{{ route('comics.show', $comic->id) }}">
                         {{ $comic->title }}
                     </a>
@@ -54,7 +58,9 @@
                 <td>{{ $comic->series }}</td>
                 <td>{{ $comic->sale_date}}</td>
                 <td>
-                    <img src="{{ $comic->thumb}}" alt="" height="80">
+                    <a class="btn btn-primary" href="{{ route('comics.edit', $comic->id) }}">
+                        EDIT
+                    </a>
                 </td>
 
             </tr>
