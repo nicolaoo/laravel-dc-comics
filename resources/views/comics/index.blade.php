@@ -24,6 +24,12 @@
             @endforeach
         </tbody>
     </table> -->
+    <div class="row py-5">
+        <div class="col-auto">
+
+            <a href="{{ route('comics.create') }}" class="btn btn-primary mx-auto">nuovo eroe</a>
+        </div>
+    </div>
 
     <table class="table ">
         <thead>
@@ -32,6 +38,8 @@
                 <th scope="col">Titolo</th>
                 <th scope="col">Serie</th>
                 <th scope="col">Data</th>
+                <th scope="col">Img</th>
+
             </tr>
         </thead>
         <tbody>
@@ -45,6 +53,9 @@
                 </td>
                 <td>{{ $comic->series }}</td>
                 <td>{{ $comic->sale_date}}</td>
+                <td>
+                    <img src="{{ $comic->thumb}}" alt="" height="80">
+                </td>
 
             </tr>
             @endforeach

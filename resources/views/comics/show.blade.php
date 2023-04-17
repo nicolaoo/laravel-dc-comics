@@ -6,7 +6,7 @@
     <div class="grid">
         <div class="card-comics">
             <figure>
-                <img src="{{ $comic->thumb }}" alt="">
+                <img src="{{ $comic->thumb }}" alt="" height="200">
             </figure>
             <ul>
                 <li>
