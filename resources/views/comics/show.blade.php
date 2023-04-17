@@ -2,12 +2,24 @@
 
 @section('content')
 
+<style>
+    .row {
+        flex-wrap: nowrap;
+        align-items: end;
+        gap: 15px;
+    }
+</style>
+
 <div class="container">
     <div class="grid">
         <div class="card-comics">
-            <figure>
-                <img src="{{ $comic->thumb }}" alt="" height="200">
-            </figure>
+            <div class="row">
+                <a class="col-auto my-4 btn btn-primary" href="{{ route('comics.index') }}">HOME</a>
+                <figure>
+                    <img src="{{ $comic->thumb }}" alt="" height="200">
+                </figure>
+
+            </div>
             <ul>
                 <li>
                     <h1>{{ $comic->title}}</h1>
