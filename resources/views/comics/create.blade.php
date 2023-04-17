@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1>crea un nuovo personaggio</h1>
+    <a class="btn btn-primary" href="{{ route('comics.index') }}">HOME</a>
 
 </div>
 

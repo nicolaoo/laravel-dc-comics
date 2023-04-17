@@ -10,6 +10,7 @@
 </div>
 <div class="container">
     <a class="btn btn-primary" href="{{ route('comics.index') }}">HOME</a>
+    <a class="btn btn-warning" href="{{ route('comics.show', $comic->id) }}">COMICS</a>
 </div>
 <div class="container">
     <form action="{{ route('comics.update', $comic->id) }}" method="POST">
