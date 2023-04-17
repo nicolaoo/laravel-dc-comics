@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-    <form action="" method="POST">
+    <form action="{{ route('comics.store')}}" method="POST">
 
         @csrf
 
@@ -27,7 +27,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="sale_date" class="form-label">data</label>
+            <label for="sale_date" class="form-label">data di vendita</label>
             <input type="text" class="form-control" id="sale_date" name="sale_date">
         </div>
 
