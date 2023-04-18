@@ -27,7 +27,7 @@
     <div class="row py-5">
         <div class="col-auto">
 
-            <a href="{{ route('comics.create') }}" class="btn btn-primary mx-auto">nuovo eroe</a>
+            <a href="{{ route('comics.create') }}" class="btn btn-primary mx-auto">NUOVO EROE</a>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Data</th>
                 <th scope="col">Modifica</th>
-
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -62,6 +62,13 @@
                         EDIT
                     </a>
                 </td>
+                <td>
+                    <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input class="delete-btn btn btn-danger" type="submit" value="DELETE">
+                    </form>
+                </td>
 
             </tr>
             @endforeach
@@ -69,4 +76,10 @@
     </table>
 
 </div>
+
+<style>
+    .delete-btn {
+        width: 80px;
+    }
+</style>
 @endsection

@@ -18,7 +18,7 @@
 <body>
 
     <main class="bg-light">
-
+        <img src="" alt="">
         @yield('content')
     </main>
 
