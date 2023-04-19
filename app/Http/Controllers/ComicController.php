@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -29,14 +30,23 @@ class ComicController extends Controller
 
         // $data = $request->all();
 
-        $data = $request->validate()([
+        $data = $request->validate([
             'title' => 'required|max:255|min:3',
             'description' => 'nullable|string',
             'thumb' => 'required|max:255|url',
             'price' => 'required|max:30|min:1|numeric|',
             'series' => 'required|max:100|min:3',
             'sale_date' => 'required|date',
-            'type' => 'required|max:50|min:3',
+            'type' => [
+                'required',
+                Rule::in([
+                    'comic book', 'graphic novel',
+                    'azione', 'avventura', 'fantastico',
+                    'fantascienza', 'commedia', 'drammatico', 'epico',
+                ]),
+                'max:50',
+                'min:3',
+            ],
         ]);
 
         // $new_comic = new Comic();
@@ -51,7 +61,7 @@ class ComicController extends Controller
 
         $new_comic = Comic::create($data);
 
-        return redirect()->route('comics.show', $new_comic->id);
+        return redirect()->route('comics.show', $new_comic);
     }
 
     public function edit(Comic $comic)
