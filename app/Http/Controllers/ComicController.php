@@ -44,7 +44,6 @@ class ComicController extends Controller
                     'azione', 'avventura', 'fantastico',
                     'fantascienza', 'commedia', 'drammatico', 'epico',
                 ]),
-                'max:50',
                 'min:3',
             ],
         ]);
